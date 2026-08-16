@@ -401,4 +401,40 @@ document.addEventListener('DOMContentLoaded', () => {
         appGif.style.cursor = 'pointer';
     }
 
+    /* ==========================================
+       7. Dark/Light Theme Toggle
+       ========================================== */
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    
+    const getPreferredTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) return savedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        const icon = themeToggleBtn.querySelector('i');
+        if (icon) {
+            icon.className = theme === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+    };
+
+    // Apply initial theme
+    setTheme(getPreferredTheme());
+
+    themeToggleBtn.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // Listen for system theme preference changes (if user hasn't explicitly set one)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+
 });

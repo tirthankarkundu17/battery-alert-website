@@ -5,13 +5,13 @@
 
 /* Design Tokens & Theme Variables */
 :root {
-    --bg-primary: #070a13;
-    --bg-secondary: #0f1424;
-    --bg-tertiary: #1b2035;
-    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e2e8f0;
+    --border-color: rgba(15, 23, 42, 0.08);
     
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
     --text-muted: #64748b;
     
     --color-green: #10b981;
@@ -25,13 +25,39 @@
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.12);
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 16px;
+    
+    /* Header & Chart Grid Light Defaults */
+    --bg-header-rgba: 248, 250, 252;
+    --chart-grid: #e2e8f0;
+    --chart-axis: #94a3b8;
+}
+
+/* Dark Theme Variables Override */
+[data-theme="dark"] {
+    --bg-primary: #070a13;
+    --bg-secondary: #0f1424;
+    --bg-tertiary: #1b2035;
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
     --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.25);
     
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --border-radius: 16px;
+    --bg-header-rgba: 7, 10, 19;
+    --chart-grid: #1f2937;
+    --chart-axis: #374151;
 }
 
 /* Reset & Base Styles */
@@ -170,14 +196,14 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(7, 10, 19, 0.8);
+    background-color: rgba(var(--bg-header-rgba), 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .header-scrolled {
-    background-color: rgba(7, 10, 19, 0.95);
+    background-color: rgba(var(--bg-header-rgba), 0.95);
     box-shadow: var(--shadow-md);
 }
 
@@ -231,6 +257,26 @@ a {
     color: var(--text-primary);
     font-size: 24px;
     cursor: pointer;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    align-self: center;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
 }
 
 /* Hero Section */
@@ -309,7 +355,7 @@ a {
 .hero-stats-strip {
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     padding: 16px 24px;
@@ -360,6 +406,13 @@ a {
     overflow: hidden;
     transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
     transition: transform 0.5s ease;
+    
+    /* Force dark theme tokens inside the mockup phone so it always looks correct */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --bg-tertiary: #1b2035;
+    --border-color: rgba(255, 255, 255, 0.08);
 }
 
 .phone-frame:hover {
@@ -614,7 +667,7 @@ a {
 .simulation-status {
     padding: 16px 20px;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
 }
 
@@ -645,6 +698,13 @@ a {
     box-shadow: var(--shadow-lg);
     overflow: hidden;
     position: relative;
+    
+    /* Force dark theme tokens inside the mockup phone so it always looks correct */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --bg-tertiary: #1b2035;
+    --border-color: rgba(255, 255, 255, 0.08);
 }
 
 .mock-device-screen {
@@ -973,8 +1033,8 @@ a {
 /* Tooltip Modal in Chart */
 .chart-tooltip {
     position: absolute;
-    background-color: #0c0f1d;
-    border: 1px solid var(--bg-tertiary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 8px 12px;
     font-size: 11px;
