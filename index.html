@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Battery Alert is a lightweight Android application designed to protect and extend your device's battery life by monitoring charging cycles and notifying you of critical thresholds.">
+    <meta name="keywords" content="Battery Alert, Battery Saver, Battery Health, Android Battery App, Charge Alert, Lithium Battery Care">
+    <meta name="author" content="Tirthankar Kundu">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Battery Alert 🔋 | Maximize Android Battery Longevity">
+    <meta property="og:description" content="Monitor your battery health in real-time, customize charge/discharge threshold alarms, and extend device life with Battery Alert.">
+    <meta property="og:image" content="../docs/battery_alert.gif">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Battery Alert 🔋 | Maximize Android Battery Longevity">
+    <meta property="twitter:description" content="Monitor your battery health in real-time, customize charge/discharge threshold alarms, and extend device life with Battery Alert.">
+    <meta property="twitter:image" content="../docs/battery_alert.gif">
+
+    <title>Battery Alert - Maximize Android Battery Longevity</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo" id="nav-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-battery-three-quarters"></i>
+                </div>
+                <span class="logo-text">Battery <span class="accent-text">Alert</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#features" class="nav-link" id="nav-link-features">Features</a>
+                <a href="#simulator" class="nav-link" id="nav-link-simulator">Simulator</a>
+                <a href="#analytics" class="nav-link" id="nav-link-analytics">Analytics</a>
+                <a href="#tips" class="nav-link" id="nav-link-tips">Battery Care</a>
+                <a href="#download" class="btn btn-secondary nav-btn" id="nav-btn-download">Get APK</a>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="badge"><i class="fa-solid fa-shield-halved"></i> Extend Battery Health</span>
+                </div>
+                <h1 class="hero-title">Protect Your Battery. <br><span class="gradient-text">Extend Its Lifespan.</span></h1>
+                <p class="hero-subtitle">A modern, lightweight Android app that monitors charge cycles and alerts you when critical thresholds are reached. Keep your device in the optimal 20% - 80% battery range effortlessly.</p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary" id="hero-btn-download">
+                        <i class="fa-solid fa-download"></i> Download APK
+                    </a>
+                    <a href="https://github.com/tirthankarkundu17/BatteryAlert" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-btn-github">
+                        <i class="fa-brands fa-github"></i> View GitHub
+                    </a>
+                </div>
+                
+                <div class="hero-stats-strip">
+                    <div class="strip-item">
+                        <span class="strip-num">20-80%</span>
+                        <span class="strip-label">Optimal Charging Range</span>
+                    </div>
+                    <div class="strip-divider"></div>
+                    <div class="strip-item">
+                        <span class="strip-num">0%</span>
+                        <span class="strip-label">CPU Performance Lag</span>
+                    </div>
+                    <div class="strip-divider"></div>
+                    <div class="strip-item">
+                        <span class="strip-num">100%</span>
+                        <span class="strip-label">Local & Private Data</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-media-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <img src="../docs/battery_alert.gif" alt="Battery Alert Application Demonstration" class="app-gif" loading="lazy">
+                    </div>
+                    <div class="phone-reflection"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Stats & Health Intro -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why the 20-80% Rule Matters</h2>
+                <p class="section-subtitle">Lithium-ion batteries experience the most stress when fully charged (above 80%) or deeply discharged (below 20%). Staying in this sweet spot can double your battery's service life.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card reveal-on-scroll">
+                    <div class="stat-icon-wrapper text-danger">
+                        <i class="fa-solid fa-temperature-arrow-up"></i>
+                    </div>
+                    <h3 class="stat-card-title">Avoid Thermal Stress</h3>
+                    <p class="stat-card-text">Charging past 80% creates excess heat, which degrades internal battery chemistry rapidly. Our alarm reminds you to unplug.</p>
+                </div>
+                <div class="stat-card reveal-on-scroll">
+                    <div class="stat-icon-wrapper text-primary">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="stat-card-title">Reduce Cycle Counts</h3>
+                    <p class="stat-card-text">A full 0% to 100% charge uses 1 complete cycle, whereas partial charges use only a fraction, heavily extending longevity.</p>
+                </div>
+                <div class="stat-card reveal-on-scroll">
+                    <div class="stat-icon-wrapper text-success">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="stat-card-title">Long-term Longevity</h3>
+                    <p class="stat-card-text">Regular threshold usage maintains your battery capacity at near-factory levels even after years of daily operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Packed with Features</span>
+                <h2 class="section-title">Designed for Everyday Protection</h2>
+                <p class="section-subtitle">Everything you need to monitor, analyze, and defend your phone's battery health in a clean, user-friendly UI.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card reveal-on-scroll">
+                    <div class="feature-icon bg-green">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Real-time Monitoring</h3>
+                    <p class="feature-text">Instantly track battery levels, precise temperatures, charge rates, and battery health statuses (Excellent, Good, Overheat, etc.).</p>
+                </div>
+                
+                <div class="feature-card reveal-on-scroll">
+                    <div class="feature-icon bg-blue">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="feature-title">Customizable Thresholds</h3>
+                    <p class="feature-text">Set your own customized low limit (e.g. 20%) and high limit (e.g. 80%) values. Receive distinct alarms for charging and discharging.</p>
+                </div>
+
+                <div class="feature-card reveal-on-scroll">
+                    <div class="feature-icon bg-purple">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="feature-title">Foreground Protection</h3>
+                    <p class="feature-text">Runs a highly optimized Android Foreground Service that listens to battery events without getting killed by native battery savers.</p>
+                </div>
+
+                <div class="feature-card reveal-on-scroll">
+                    <div class="feature-icon bg-yellow">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title">Audible & Visual Alarms</h3>
+                    <p class="feature-text">Trigger distinct alarms when thresholds are crossed, complete with continuous notification badges and optional audio alerts.</p>
+                </div>
+
+                <div class="feature-card reveal-on-scroll">
+                    <div class="feature-icon bg-teal">
+                        <i class="fa-solid fa-chart-area"></i>
+                    </div>
+                    <h3 class="feature-title">Interactive Analytics</h3>
+                    <p class="feature-text">A custom history fragment plots battery levels and charging cycles, helping you visualize daily charge rates and trends.</p>
+                </div>
+
+                <div class="feature-card reveal-on-scroll">
+                    <div class="feature-icon bg-pink">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <h3 class="feature-title">Maintenance Tips</h3>
+                    <p class="feature-text">A curated educational resource center built directly into the app, outlining the best habits to prevent device degradation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator Section -->
+    <section class="simulator-section" id="simulator">
+        <div class="container simulator-container">
+            <div class="simulator-info reveal-on-scroll">
+                <span class="section-badge">Live Interactive Simulator</span>
+                <h2 class="section-title">See How It Works in Real-Time</h2>
+                <p class="section-subtitle">Adjust the battery levels and threshold limits using the sliders. Experience how the app monitors and triggers alerts when battery thresholds are breached.</p>
+                
+                <div class="control-panel">
+                    <div class="control-group">
+                        <label for="slider-battery">Current Battery Charge: <span id="val-battery" class="val-display">50%</span></label>
+                        <input type="range" id="slider-battery" min="0" max="100" value="50" class="custom-slider">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="slider-low">Low Limit Alarm Threshold: <span id="val-low" class="val-display">20%</span></label>
+                        <input type="range" id="slider-low" min="5" max="45" value="20" class="custom-slider">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="slider-high">High Limit Alarm Threshold: <span id="val-high" class="val-display">80%</span></label>
+                        <input type="range" id="slider-high" min="55" max="95" value="80" class="custom-slider">
+                    </div>
+                </div>
+
+                <div class="simulation-status">
+                    <p id="simulator-message" class="simulator-message normal"><i class="fa-solid fa-circle-check"></i> System Stable - Charging level in safe range.</p>
+                </div>
+            </div>
+            
+            <div class="simulator-visual reveal-on-scroll">
+                <div class="mock-device-frame">
+                    <div class="mock-device-screen">
+                        <!-- Top status bar -->
+                        <div class="mock-status-bar">
+                            <span class="mock-time">12:00</span>
+                            <div class="mock-status-icons">
+                                <i class="fa-solid fa-wifi"></i>
+                                <i class="fa-solid fa-signal"></i>
+                                <i class="fa-solid fa-battery-half" id="status-battery-icon"></i>
+                            </div>
+                        </div>
+
+                        <!-- App Inner Content -->
+                        <div class="mock-app-content">
+                            <h4 class="mock-app-title">Battery Alert Dashboard</h4>
+                            
+                            <!-- Battery Visual Box -->
+                            <div class="battery-outer">
+                                <div class="battery-tip"></div>
+                                <div class="battery-body">
+                                    <div class="battery-fill" id="mock-battery-fill">
+                                        <span class="battery-percentage-text" id="mock-percentage-text">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mock-dashboard-stats">
+                                <div class="mock-stat-box">
+                                    <span class="stat-label">Health</span>
+                                    <span class="stat-val text-success" id="mock-health">Excellent</span>
+                                </div>
+                                <div class="mock-stat-box">
+                                    <span class="stat-label">Temp</span>
+                                    <span class="stat-val" id="mock-temp">29°C</span>
+                                </div>
+                                <div class="mock-stat-box">
+                                    <span class="stat-label">Status</span>
+                                    <span class="stat-val" id="mock-status">Discharging</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Alert Trigger Notifications -->
+                            <div class="mock-notification-container" id="mock-alert-box">
+                                <div class="alert-banner normal" id="live-alert-banner">
+                                    <div class="alert-icon"><i class="fa-solid fa-info-circle"></i></div>
+                                    <div class="alert-text">
+                                        <p class="alert-title" id="alert-title-text">Battery level normal</p>
+                                        <p class="alert-desc" id="alert-desc-text">Keep maintaining the healthy range.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Interactive Preview Section -->
+    <section class="analytics-section" id="analytics">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Historical Trends</span>
+                <h2 class="section-title">Visual Analytics Dashboard</h2>
+                <p class="section-subtitle">Track your historical metrics, temperature rises, and cycle times in a custom built interactive plotting engine.</p>
+            </div>
+            
+            <div class="analytics-showcase reveal-on-scroll">
+                <div class="analytics-left">
+                    <h3 class="analytics-left-title">Understand Charging Trends</h3>
+                    <p class="analytics-left-desc">Battery Alert automatically logs charge data points, compiling visual charts to let you know how fast your phone charges and when battery performance starts to degrade.</p>
+                    
+                    <div class="analytics-toggle-group">
+                        <button class="btn btn-toggle active" data-period="day" id="btn-chart-day">Daily View</button>
+                        <button class="btn btn-toggle" data-period="week" id="btn-chart-week">Weekly View</button>
+                        <button class="btn btn-toggle" data-period="month" id="btn-chart-month">Monthly Trend</button>
+                    </div>
+
+                    <ul class="analytics-features-list">
+                        <li><i class="fa-solid fa-check text-green"></i> <strong>Peak Heat Detection</strong>: Pinpoint when your device runs hot during charging.</li>
+                        <li><i class="fa-solid fa-check text-green"></i> <strong>Charge Velocity</strong>: Monitor how fast your charger is transferring power.</li>
+                        <li><i class="fa-solid fa-check text-green"></i> <strong>Capacity Retention</strong>: Spot subtle drops in maximum storage capacity over months.</li>
+                    </ul>
+                </div>
+                
+                <div class="analytics-right">
+                    <div class="chart-container-box">
+                        <div class="chart-header">
+                            <span class="chart-title"><i class="fa-solid fa-chart-area text-blue"></i> Charge History (<span id="chart-timeframe">Daily</span>)</span>
+                            <div class="chart-legend">
+                                <span class="legend-item"><span class="legend-color bg-blue"></span> Battery %</span>
+                                <span class="legend-item"><span class="legend-color bg-red"></span> Temp (°C)</span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <!-- SVG Custom Interactive Chart -->
+                            <svg viewBox="0 0 500 240" class="interactive-chart" id="analytics-chart">
+                                <!-- Chart grid lines -->
+                                <line x1="40" y1="30" x2="480" y2="30" stroke="#1f2937" stroke-dasharray="4" />
+                                <line x1="40" y1="80" x2="480" y2="80" stroke="#1f2937" stroke-dasharray="4" />
+                                <line x1="40" y1="130" x2="480" y2="130" stroke="#1f2937" stroke-dasharray="4" />
+                                <line x1="40" y1="180" x2="480" y2="180" stroke="#1f2937" stroke-dasharray="4" />
+                                <line x1="40" y1="210" x2="480" y2="210" stroke="#374151" stroke-width="1.5" />
+                                
+                                <!-- Axis Labels -->
+                                <text x="15" y="35" class="chart-axis-label">100%</text>
+                                <text x="15" y="135" class="chart-axis-label">50%</text>
+                                <text x="20" y="215" class="chart-axis-label">0%</text>
+                                
+                                <!-- Y Axis Divider -->
+                                <line x1="40" y1="20" x2="40" y2="210" stroke="#374151" stroke-width="1.5" />
+                                
+                                <!-- Graph Paths (Dynamically drawn by JS) -->
+                                <path d="" fill="none" stroke="#3b82f6" stroke-width="3" id="chart-path-battery" class="chart-path" />
+                                <path d="" fill="none" stroke="#ef4444" stroke-width="2" id="chart-path-temp" stroke-dasharray="3" class="chart-path" />
+                                
+                                <!-- Fill Area under Battery Curve -->
+                                <path d="" fill="url(#chart-gradient-battery)" opacity="0.15" id="chart-fill-battery" />
+                                
+                                <!-- Gradients Definition -->
+                                <defs>
+                                    <linearGradient id="chart-gradient-battery" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#3b82f6" />
+                                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- Tooltip highlight circle -->
+                                <circle cx="0" cy="0" r="6" fill="#3b82f6" stroke="#ffffff" stroke-width="2" id="chart-tooltip-dot" style="display:none;" />
+                            </svg>
+
+                            
+                            <!-- Tooltip Modal -->
+                            <div class="chart-tooltip" id="chart-tooltip">
+                                <p class="tooltip-time" id="tooltip-time">12:00 PM</p>
+                                <p class="tooltip-val"><span class="legend-color bg-blue"></span> Level: <strong id="tooltip-battery">80%</strong></p>
+                                <p class="tooltip-val"><span class="legend-color bg-red"></span> Temp: <strong id="tooltip-temp">32°C</strong></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline labels -->
+                        <div class="chart-timeline-labels" id="chart-labels">
+                            <span>08:00</span>
+                            <span>12:00</span>
+                            <span>16:00</span>
+                            <span>20:00</span>
+                            <span>24:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section" id="tips">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Battery Maintenance Tips</span>
+                <h2 class="section-title">Extend Longevity with Simple Habits</h2>
+                <p class="section-subtitle">Avoid costly battery replacements with these professional care practices directly integrated within Battery Alert.</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-box reveal-on-scroll">
+                    <div class="tip-number">01</div>
+                    <h3 class="tip-title">Stay out of the red zone</h3>
+                    <p class="tip-desc">Letting your battery hit 0% stresses the anode and cathode materials. Recharge once it falls to 20%.</p>
+                </div>
+                
+                <div class="tip-box reveal-on-scroll">
+                    <div class="tip-number">02</div>
+                    <h3 class="tip-title">Unplug at 80% charge</h3>
+                    <p class="tip-desc">Leaving the charger plugged in at 100% subjects cells to high-voltage stress, boosting physical corrosion.</p>
+                </div>
+
+                <div class="tip-box reveal-on-scroll">
+                    <div class="tip-number">03</div>
+                    <h3 class="tip-title">Avoid temperature spikes</h3>
+                    <p class="tip-desc">Heat is a battery's worst enemy. Never charge under direct sunlight, or run heavy gaming apps during fast charges.</p>
+                </div>
+
+                <div class="tip-box reveal-on-scroll">
+                    <div class="tip-number">04</div>
+                    <h3 class="tip-title">Use slower charging overnight</h3>
+                    <p class="tip-desc">If charging overnight, use a standard slow charger. Fast chargers pump current rapidly, heating the battery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner / Download Section -->
+    <section class="download-section" id="download">
+        <div class="download-bg-blur"></div>
+        <div class="container download-container reveal-on-scroll">
+            <div class="download-content">
+                <h2 class="download-title">Ready to Save Your Battery?</h2>
+                <p class="download-subtitle">Download Battery Alert for Android today. Get real-time protection, customized metrics dashboards, and cycle stats absolutely free.</p>
+                
+                <div class="download-buttons">
+                    <a href="https://github.com/tirthankarkundu17/BatteryAlert/releases" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" id="dl-btn-apk">
+                        <i class="fa-solid fa-cube"></i>
+                        <div class="btn-text">
+                            <span class="btn-subtext">Direct Download</span>
+                            <span class="btn-maintext">Download APK</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/tirthankarkundu17/BatteryAlert" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-large" id="dl-btn-github">
+                        <i class="fa-brands fa-github"></i>
+                        <div class="btn-text">
+                            <span class="btn-subtext">Open Source Project</span>
+                            <span class="btn-maintext">Fork on GitHub</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="download-version-info">
+                    <span>Current Version: v1.0.0</span>
+                    <span class="bullet-dot">•</span>
+                    <span>Size: ~3.8 MB</span>
+                    <span class="bullet-dot">•</span>
+                    <span>Target: Android 6.0+ (API 23+)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <a href="#" class="logo footer-logo" id="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
+                    <span class="logo-text">Battery <span class="accent-text">Alert</span></span>
+                </a>
+                <p class="footer-description">A lightweight, battery-saving utilities app designed to maximize battery cycles and life on Android devices. Open source and privacy-focused.</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <h4 class="footer-title">Navigation</h4>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#simulator">Simulator</a>
+                    <a href="#analytics">Analytics</a>
+                    <a href="#tips">Tips</a>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <h4 class="footer-title">Developer</h4>
+                <div class="footer-links">
+                    <a href="https://github.com/tirthankarkundu17/BatteryAlert" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                    <a href="https://github.com/tirthankarkundu17/BatteryAlert/issues" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bug"></i> Report Issues</a>
+                    <a href="https://github.com/tirthankarkundu17/BatteryAlert/releases" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-tags"></i> Releases</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p class="copyright">&copy; 2026 Battery Alert. Built with ❤️ for battery health longevity.</p>
+                <div class="footer-badges">
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">Material Design 3</span>
+                    <span class="tech-badge">Android SDK 35</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="app.js?v=3"></script>
+</body>
+</html>
