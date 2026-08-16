@@ -368,4 +368,37 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltipDot.style.display = 'none';
     });
 
+    /* ==========================================
+       6. GIF Animation Restart Logic
+       ========================================== */
+    const appGif = document.querySelector('.app-gif');
+    if (appGif) {
+        const restartGif = (img) => {
+            const currentSrc = img.src;
+            img.src = '';
+            // Using a tiny timeout to ensure the DOM updates and restarts the gif
+            setTimeout(() => {
+                img.src = currentSrc;
+            }, 50);
+        };
+
+        // Restart GIF when it scrolls into view
+        const gifObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    restartGif(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        gifObserver.observe(appGif);
+
+        // Also allow manual restart on click
+        appGif.addEventListener('click', () => {
+            restartGif(appGif);
+        });
+        
+        // Add pointer cursor to show it is interactive
+        appGif.style.cursor = 'pointer';
+    }
+
 });
